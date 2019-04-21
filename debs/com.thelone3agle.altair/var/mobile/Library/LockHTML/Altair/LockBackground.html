@@ -1,0 +1,190 @@
+<!--
+	Altair - by Eagle (@TheLone3agle). Inspired by Muzik (@thatMshl).
+-->
+
+<html>
+    <head>
+		<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewpoint">
+		<link rel="stylesheet" href="Style.css"/>
+             <script type="text/javascript" charset="utf-8" src="options.js"></script>
+    </head>
+
+<body>
+    <div class="container">
+		<div id="bg">
+			<div id="image">
+				<img id="artwork" src="img/noalbumart.png"></div>
+			<div id="title"></div>
+			<div id="artist"></div>
+                   <img id="prev" src="img/prev.png" onclick="previousTrack()">
+                   <img id="playPause" src="img/pause.png" onclick="playPause()">
+                   <img id="next" src="img/next.png" onclick="nextTrack()">
+		</div>
+		</div>
+	</div>
+
+<script>
+if (hidden == true){ 
+    document.body.style = "visibility: hidden;";
+}
+      var circle = false;
+	var doc = document,
+		titleDiv = doc.getElementById('title');
+		artistDiv = doc.getElementById('artist');
+		nextDiv = doc.getElementById('next');
+		prevDiv = doc.getElementById('prev');
+		playDiv = doc.getElementById('playPause');
+             bgDiv = doc.getElementById('bg');
+             artworkDiv = doc.getElementById('artwork');
+	      
+             //playDiv.style.filter = "invert(1)";
+             //nextDiv.style.filter = "invert(1)";
+             //prevDiv.style.filter = "invert(1)";
+
+    bgDiv.style = "-webkit-animation: fadein 0.2s linear 1 normal; -webkit-animation-fill-mode: forwards";
+
+if (Epic == true) {
+    bgDiv.style.height = "125px";
+    artworkDiv.style.height = "125px";
+    artworkDiv.style.width = "125px";
+
+    prevDiv.style.left = "46%";
+    prevDiv.style.top = "82px";
+    playDiv.style.left = "62%";
+    playDiv.style.top = "81px";
+    nextDiv.style.left = "79%";
+    nextDiv.style.top = "82px";
+
+    titleDiv.style.fontFamily = "win";
+    titleDiv.style.fontSize = "22px";
+    titleDiv.style.left = "150px";
+    titleDiv.style.top = "9px";
+    titleDiv.style.width = "58%";
+
+    artistDiv.style.fontFamily = "win";
+    artistDiv.style.fontSize = "17px";
+    artistDiv.style.left = "150px";
+    artistDiv.style.top = "38px";
+}
+
+if (Epicc == true) {
+    var circle = true;
+    bgDiv.style.height = "130px";
+    artworkDiv.style.height = "100px";
+    artworkDiv.style.width = "100px";
+    artworkDiv.style.left = "295px";
+    artworkDiv.style.top = "15px";
+
+    playDiv.style.width = "37px";
+    playDiv.style.height = "37px";
+    nextDiv.style.width = "36px";
+    nextDiv.style.height = "36px";
+    prevDiv.style.width = "36px";
+    prevDiv.style.height = "36px";
+   
+    playDiv.style.left = "103.25";
+    playDiv.style.top = "17.75";
+    nextDiv.style.left = "178.5";
+    nextDiv.style.top = "18";
+    prevDiv.style.left = "28.5";
+    prevDiv.style.top = "18";
+
+    titleDiv.style.top = "66.5";
+    titleDiv.style.left = "27";
+    titleDiv.style.fontSize = "24";
+    titleDiv.style.fontFamily = "light";
+    titleDiv.style.letterSpacing = "0.55px";
+    artistDiv.style.top = "99.5";
+    artistDiv.style.left = "28.5";
+    artistDiv.style.fontSize = "11";
+    artistDiv.style.letterSpacing = "0.15px";
+}
+
+if (circle == true) {
+    nextDiv.src = "img/circlenext.png";
+    prevDiv.src = "img/circleprev.png";
+}
+
+function mainUpdate(type) {
+    var albumart = 
+document.querySelector('#artwork');
+
+if(type == "music") {
+
+       if (artist === "(null)" || artist === "null") {
+					
+					artistDiv.style.display = "none";
+                                titleDiv.style.display = "none";
+                                albumart.src = "img/noalbumart.png";
+                                document.body.style = "visibility: hidden;";                               
+                              
+				} else {					
+					artistDiv.style.display = "block"; 
+                                titleDiv.style.display = "block";
+				}
+        
+        if(isplaying){ 
+            document.body.style = "visibility: visible;";
+            if (circle == true) {
+                   playDiv.src = "img/circlepause.png";
+            } else {
+                   playDiv.src = "img/pause.png";
+            }
+
+        artistDiv.innerHTML = artist;
+        titleDiv.innerHTML = text_truncate(title);
+       
+       art = new Image();
+	        art.onload = function () {
+	            albumart.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();
+	        };
+					art.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();
+
+        } else {
+           
+            if (circle == true){
+                 playDiv.src = "img/circleplay.png";
+            } else {
+                   playDiv.src ="img/play.png"; 
+                   }
+        }
+    }
+}    
+</script>
+
+<script>
+//add ellipsis to anything longer than x characters
+text_truncate = function(str, length, ending) {
+        if (length == null) {
+          if (Epicc == true) { 
+              length = 18;
+          } else {
+               length = 23;
+             }
+        }
+        if (ending == null) {
+          ending = '...';
+        }
+        if (str.length > length) {
+          return str.substring(0, length - ending.length) + ending;
+        } else {
+          return str;
+        }
+      };
+</script>    
+
+<script>
+//button functions
+    function previousTrack() {
+        window.location = 'xeninfo:prevtrack';
+    }
+    function playPause() {
+        window.location = 'xeninfo:playpause';
+        }
+    function nextTrack() {
+        window.location = 'xeninfo:nexttrack'; 
+    }
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,116 @@
+body{
+  top:0;
+  left:0;
+  margin:0;
+  padding:0;
+  -webkit-animation: fadein 0.2s linear 1 normal; 
+  -webkit-animation-fill-mode: forwards;
+}
+
+.container{
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+}
+
+.container div{
+  position: absolute;
+}
+
+#bg{
+  display: block;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0,0,0,0.65);
+  -webkit-backdrop-filter:blur(0px);
+  border-radius: 0px;
+}
+
+#artwork{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+  -webkit-transition: 1s;
+  border-radius: 0px
+}
+
+#title{
+  color: white;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  left: 130px;
+  width: 70%;
+  height: 35px;
+  font-weight: 400;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: scroll;
+ font-family: 'win';
+}
+
+#artist{
+  color: white;
+  position: absolute;
+  text-align: left;
+  top: 33px;
+  left: 130px;
+  width: 61%;
+  height: 25px;
+  font-weight: 100;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: scroll;
+  font-family: 'win';
+}
+
+#playPause{
+  position: absolute;
+  top: 63px;
+  left: 59.5%;
+  width: 28px;
+  height: 27px;
+}
+
+#next{
+  position: absolute;
+  top: 64px;
+  left: 76.5%;
+  width: 25px;
+  height: 25px;
+}
+
+#prev{
+  position: absolute;
+  top: 64px;
+  left: 42.5%;
+  width: 25px;
+  height: 25px;
+}
+
+@font-face{
+      font-family: "win";
+      font-weight: 200;
+      src: url("/var/mobile/Library/LockHTML/Altair/font/regular.ttf");
+}
+
+@font-face{
+      font-family: "light";
+      font-weight: 200;
+      src: url("/var/mobile/Library/LockHTML/Altair/font/light.ttf");
+}
+
+@-webkit-keyframes fadein {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
