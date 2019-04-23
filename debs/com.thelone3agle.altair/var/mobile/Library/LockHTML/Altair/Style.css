@@ -74,7 +74,7 @@ body{
 }
 
 #playPause{
-  position: relative;
+  position: absolute;
   top: 65px;
   left: 52%;
   width: 28px;
@@ -82,7 +82,7 @@ body{
 }
 
 #next{
-  position: relative;
+  position: absolute;
   top: 64px;
   left: 61.5%;
   width: 25px;
@@ -90,7 +90,7 @@ body{
 }
 
 #prev{
-  position: relative;
+  position: absolute;
   top: 64px;
   left: 42.5%;
   width: 25px;
