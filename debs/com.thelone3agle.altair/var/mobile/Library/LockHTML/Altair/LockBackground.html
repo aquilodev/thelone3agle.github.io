@@ -4,9 +4,9 @@
 
 <html>
     <head>
-		<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewpoint">
-		<link rel="stylesheet" href="Style.css"/>
-             <script type="text/javascript" charset="utf-8" src="options.js"></script>
+	    <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewpoint">
+	    <link rel="stylesheet" href="Style.css"/>
+            <script type="text/javascript" charset="utf-8" src="options.js"></script>
     </head>
 
 <body>
@@ -19,7 +19,7 @@
                    <img id="prev" src="img/prev.png" onclick="previousTrack()">
                    <img id="playPause" src="img/pause.png" onclick="playPause()">
                    <img id="next" src="img/next.png" onclick="nextTrack()">
-		</div>
+			</div>
 		</div>
 	</div>
 
@@ -33,10 +33,6 @@ var doc = document,
 	playDiv = doc.getElementById('playPause');
 	bgDiv = doc.getElementById('bg');
 	artworkDiv = doc.getElementById('artwork');
-	      
-             //playDiv.style.filter = "invert(1)";
-             //nextDiv.style.filter = "invert(1)";
-             //prevDiv.style.filter = "invert(1)";
 
 bgDiv.style = "-webkit-animation: fadein 0.2s linear 1 normal; -webkit-animation-fill-mode: forwards";
 
@@ -182,5 +178,5 @@ text_truncate = function(str, length, ending) {
     }
 </script>
 
-    </body>
+</body>
 </html>
