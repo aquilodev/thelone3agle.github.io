@@ -148,14 +148,14 @@ if(type == "music") {
 text_truncate = function(str, length, ending) {
 	
 	length = 19;
-        if (Style2 === true) { 
+        if (Style2 == true) { 
         	length = 19;
         } 
-	if (Style1 === true) {
+	if (Style1 == true) {
         	length = 21;
         }
         
-        if (ending === null) {
+        if (ending == null) {
         	ending = '...';
         }
         if (str.length > length) {
