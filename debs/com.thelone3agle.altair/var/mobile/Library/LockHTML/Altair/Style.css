@@ -75,9 +75,9 @@ body{
 
 #playPause{
   position: absolute;
-  top: 65px;
+  top: 63;
   left: 58%;
-  width: 28px;
+  width: 27px;
   height: 27px;
 }
 
