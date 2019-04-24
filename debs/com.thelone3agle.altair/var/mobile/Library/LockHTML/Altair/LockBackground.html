@@ -37,7 +37,7 @@ var doc = document,
 
 bgDiv.style = "-webkit-animation: fadein 0.2s linear 1 normal; -webkit-animation-fill-mode: forwards";
 
-if (Style1 === true) {
+if (Style1 == true) {
     bgDiv.style.height = "125px";
     artworkDiv.style.height = "125px";
     artworkDiv.style.width = "125px";
@@ -61,7 +61,7 @@ if (Style1 === true) {
     artistDiv.style.top = "38px";
 }
 
-if (Style2 === true) {
+if (Style2 == true) {
     var circle = true;
     bgDiv.style.height = "130px";
     artworkDiv.style.height = "100px";
@@ -94,7 +94,7 @@ if (Style2 === true) {
     artistDiv.style.letterSpacing = "0.15px";
 }
 
-if (circle === true) {
+if (circle == true) {
     nextDiv.src = "img/circlenext.png";
     prevDiv.src = "img/circleprev.png";
 }
@@ -103,9 +103,9 @@ function mainUpdate(type) {
 	var albumart = 
 	document.querySelector('#artwork');
 
-if(type === "music") {
+if(type == "music") {
 
-       if (artist === "(null)" || artist === "null") {					
+       if (artist == "(null)" || artist == "null") {					
 		artistDiv.style.display = "none";
                 titleDiv.style.display = "none";
                 artworkDiv.style.display = "none";
@@ -117,7 +117,7 @@ if(type === "music") {
         
         if(isplaying){ 
 		document.body.style = "visibility: visible;";
-            	if (circle === true) {
+            	if (circle == true) {
                 	playDiv.src = "img/circlepause.png";
                 } else {
                    	playDiv.src = "img/pause.png";
@@ -133,7 +133,7 @@ if(type === "music") {
 					art.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();
 
         } else {           
-            if (circle === true){
+            if (circle == true){
                 playDiv.src = "img/circleplay.png";
             } else {
             	playDiv.src ="img/play.png"; 
