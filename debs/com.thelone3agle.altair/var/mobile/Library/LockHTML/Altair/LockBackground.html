@@ -22,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 <script>
 var circle = false;
 var doc = document,
@@ -100,46 +100,43 @@ if (circle == true) {
 }
 
 function mainUpdate(type) {
-	var albumart = 
-	document.querySelector('#artwork');
-
-if(type == "music") {
-
-       if (artist == "(null)" || artist == "null") {					
-		artistDiv.style.display = "none";
-                titleDiv.style.display = "none";
-                artworkDiv.style.display = "none";
-                document.body.style = "visibility: hidden;";                                                             
-       } else {					
-		artistDiv.style.display = "block"; 
-                titleDiv.style.display = "block";
-       }
-        
-        if(isplaying){ 
-		document.body.style = "visibility: visible;";
-            	if (circle == true) {
-                	playDiv.src = "img/circlepause.png";
-                } else {
-                   	playDiv.src = "img/pause.png";
-                }
-
-        artistDiv.innerHTML = artist;
+	
+	artworkDiv.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();	
+	artistDiv.innerHTML = artist;
         titleDiv.innerHTML = text_truncate(title);
-       
-        art = new Image();
-		art.onload = function () {
-	        	albumart.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();
-	        };
-					art.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();
 
-        } else {           
-            if (circle == true){
-                playDiv.src = "img/circleplay.png";
-            } else {
-            	playDiv.src ="img/play.png"; 
-            }
-        }
-    }
+	if(type == "music") {
+
+		if (artist == "(null)" || artist == "null") {					
+			artistDiv.style.display = "none";
+                	titleDiv.style.display = "none";
+                	artworkDiv.style.display = "none";
+              		document.body.style = "visibility: hidden;";                                                             
+       		} else {					
+			artistDiv.style.display = "block"; 
+                	titleDiv.style.display = "block";
+	        	artworkDiv.style.display = "block";
+	        	document.body.style = "visibility: visible;";
+       		}
+        
+        	if(isplaying){ 
+			document.body.style = "visibility: visible;";
+            		
+			if (circle == true) {
+                		playDiv.src = "img/circlepause.png";
+                	} else {
+                   		playDiv.src = "img/pause.png";
+                	}
+
+        	} else {
+			
+            		if (circle == true){
+                		playDiv.src = "img/circleplay.png";
+            		} else {
+            			playDiv.src ="img/play.png"; 
+            		}
+        	}
+    	}
 }    
 </script>
 
@@ -148,9 +145,11 @@ if(type == "music") {
 text_truncate = function(str, length, ending) {
 	
 	length = 19;
+	
         if (Style2 == true) { 
         	length = 19;
         } 
+	
 	if (Style1 == true) {
         	length = 21;
         }
@@ -158,6 +157,7 @@ text_truncate = function(str, length, ending) {
         if (ending == null) {
         	ending = '...';
         }
+	
         if (str.length > length) {
         	return str.substring(0, length - ending.length) + ending;
         } else {
@@ -173,7 +173,7 @@ text_truncate = function(str, length, ending) {
     }
     function playPause() {
         window.location = 'xeninfo:playpause';
-        }
+    }
     function nextTrack() {
         window.location = 'xeninfo:nexttrack'; 
     }
