@@ -1,0 +1,22 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Origin: thelone3agle
+Label: Eagle's Repo
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: Eagle's personal Cydia repo
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEg1h6TnHCU+IJ/oe0vhaTWy+xjzoFAlzH/hMACgkQvhaTWy+x
+jzpc3wf/TXle3JZKDr25YZ6mse+7CbvAFrtrF9rT8mIEOizXDarX7CkJYgRoQzKQ
+OfDDvmR+sTIYKu46rbm0TnYDeJIE/Ysv3oPUQBKvunqnkW/4i9YuuvND/p66uAMd
+S4rTyi0mojMVZC39lapxM1rhHfDkomKWnACE7yQr5kVJZQlLs5NMVRa9nLPF2k+h
+jzIOP1Zc2YsZXr86tPKbCI0V35O+ABwQ0cgGTsFK5EAj3P5Poro2fghF0bkq1ge3
+Gs/zryWoT22T5bQShW1VupsOs5R8vDErV4B0DRJnYsVc0uFGz//k9xSivOQZAmsp
+QhLpnnb2i/TVUK/s5zWQx2rOXyqRqQ==
+=tSZi
+-----END PGP SIGNATURE-----
