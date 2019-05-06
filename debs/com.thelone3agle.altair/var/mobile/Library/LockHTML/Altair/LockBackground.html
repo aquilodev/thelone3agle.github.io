@@ -25,7 +25,7 @@
 	
 <script>
 var circle = false;
-var doc = document,
+var doc = document,   
 	titleDiv = doc.getElementById('title');
 	artistDiv = doc.getElementById('artist');
 	nextDiv = doc.getElementById('next');
@@ -94,6 +94,33 @@ if (Style2 == true) {
     artistDiv.style.letterSpacing = "0.15px";
 }
 
+if (Style3 == true) {
+    bgDiv.style.height = "120px";
+    artworkDiv.style.height = "105px";
+    artworkDiv.style.width = "105px";
+    artworkDiv.style.left = "7.5";
+    artworkDiv.style.top = "7.5";
+
+    prevDiv.style.left = "45%";
+    prevDiv.style.top = "82px";
+    playDiv.style.left = "61%";
+    playDiv.style.top = "82px";
+    nextDiv.style.left = "78%";
+    nextDiv.style.top = "82px";
+
+    titleDiv.style.fontFamily = "win";
+    titleDiv.style.fontSize = "22px";
+    titleDiv.style.left = "140px";
+    titleDiv.style.top = "9px";
+    titleDiv.style.width = "60%";
+
+    artistDiv.style.fontFamily = "win";
+    artistDiv.style.fontSize = "17px";
+    artistDiv.style.left = "140px";
+    artistDiv.style.top = "39px";
+}
+
+
 if (circle == true) {
     nextDiv.src = "img/circlenext.png";
     prevDiv.src = "img/circleprev.png";
@@ -101,26 +128,28 @@ if (circle == true) {
 
 function mainUpdate(type) {
 	
-	artworkDiv.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();	
 	artistDiv.innerHTML = artist;
-        titleDiv.innerHTML = text_truncate(title);
+        titleDiv.innerHTML = title;
 
 	if(type == "music") {
+		
+		artworkDiv.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();	
 
 		if (artist == "(null)" || artist == "null") {					
 			artistDiv.style.display = "none";
                 	titleDiv.style.display = "none";
-                	artworkDiv.style.display = "none";
-              		document.body.style = "visibility: hidden;";                                                             
+                	artworkDiv.style.display = "img/noalbumart.png";
+              		document.body.style = "visibility: hidden;";   
+			bgDiv.style.display = "none";
        		} else {					
 			artistDiv.style.display = "block"; 
                 	titleDiv.style.display = "block";
 	        	artworkDiv.style.display = "block";
-	        	document.body.style = "visibility: visible;";
+	        	bgDiv.style.display = "block";
        		}
         
         	if(isplaying){ 
-			document.body.style = "visibility: visible;";
+			bgDiv.style.display = "block";
             		
 			if (circle == true) {
                 		playDiv.src = "img/circlepause.png";
@@ -139,32 +168,6 @@ function mainUpdate(type) {
     	}
 }    
 </script>
-
-<script>
-//add ellipsis to anything longer than x characters
-text_truncate = function(str, length, ending) {
-	
-	length = 19;
-	
-        if (Style2 == true) { 
-        	length = 19;
-        } 
-	
-	if (Style1 == true) {
-        	length = 21;
-        }
-        
-        if (ending == null) {
-        	ending = '...';
-        }
-	
-        if (str.length > length) {
-        	return str.substring(0, length - ending.length) + ending;
-        } else {
-        	return str;
-        }
-};
-</script>    
 
 <script>
 //button functions
