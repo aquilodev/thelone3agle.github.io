@@ -126,20 +126,17 @@ if (circle == true) {
     prevDiv.src = "img/circleprev.png";
 }
 
-function mainUpdate(type) {
+function mainUpdate(type) {	
 	
 	artistDiv.innerHTML = artist;
         titleDiv.innerHTML = title;
-
-	if(type == "music") {
-		
+	
+	if(type == "music") {		
 		artworkDiv.src = "file:///var/mobile/Documents/Artwork.jpg?" + (new Date()).getTime();	
-
 		if (artist == "(null)" || artist == "null") {					
 			artistDiv.style.display = "none";
                 	titleDiv.style.display = "none";
                 	artworkDiv.style.display = "img/noalbumart.png";
-              		document.body.style = "visibility: hidden;";   
 			bgDiv.style.display = "none";
        		} else {					
 			artistDiv.style.display = "block"; 
@@ -181,6 +178,5 @@ function mainUpdate(type) {
         window.location = 'xeninfo:nexttrack'; 
     }
 </script>
-
 </body>
 </html>
